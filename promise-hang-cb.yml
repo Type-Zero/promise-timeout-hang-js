@@ -4,7 +4,7 @@ Resources:
   MyFunction:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: index.hello
+      Handler: index.hello_cb
       Runtime: nodejs4.3
       CodeUri: .
-      Timeout: 1
+      Timeout: 5
