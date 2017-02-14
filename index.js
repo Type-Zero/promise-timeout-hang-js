@@ -19,9 +19,7 @@ module.exports.hello = function(event, context, cb) {
     setTimeout(
         function (context) {
             console.log('Context timeout finishing');
-            context.done(null, 'Context timeout finished');
         }, 3000, context);
-    context.done(null, 'context handler Done');
 };
 
 module.exports.hello_cb = function(event, context, cb) {
@@ -32,7 +30,5 @@ module.exports.hello_cb = function(event, context, cb) {
     setTimeout(
         function (cb) {
             console.log('callback Timeout Finishing');
-            cb(null, 'callback Timeout Done');
         }, 3000, cb);
-    cb(null, 'callback Handler Done');
 };
