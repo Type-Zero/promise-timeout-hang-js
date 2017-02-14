@@ -14,8 +14,8 @@ function deploy (){
 }
 
 # Deploy function handlers that are using v0.10.42 context methods
-deploy promise-hang &
-deploy promise-hang-cb &
+deploy use-cb &
+deploy use-context &
 
 for job in $(jobs -p); do
   wait $job
