@@ -5,6 +5,8 @@ if [ -z $1 ]; then
 fi
 S3_BUCKET=$1
 
+npm install
+
 function deploy (){
 # $1 template-file without extension
     TMP_FILE=$(mktemp)
@@ -14,8 +16,7 @@ function deploy (){
 }
 
 # Deploy function handlers that are using v0.10.42 context methods
-deploy use-cb &
-deploy use-context &
+deploy bluebird-timeout &
 
 for job in $(jobs -p); do
   wait $job
