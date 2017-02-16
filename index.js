@@ -1,18 +1,17 @@
-var Promise = require("bluebird");
-var extend = require("util")._extend;
+var bleh = [];
+
+for (var i = 0; i < Math.ceil(process.env.MemorySize * process.env.Ratio); i++) {
+    // Fill 16% of the memory.
+    bleh.push(require('crypto').randomBytes(1000000));
+}
 
 module.exports.hello = function(event, context, cb) {
-    var p = new Promise(function(resolve, reject) {
-        setTimeout(
-            function(callingContext) {
-                console.log(["finishing promise", callingContext]);
-                console.trace();
-                resolve();
-            },
-            event.timeout, extend(context.invokeid));
-    });
-    p.then(function(foo) {
-        console.log("cb happy");
-        cb(null, "cb happy");
-    });
+    console.log("starting");
+    setTimeout(
+        function(callback) {
+            console.log("timeout hit");
+            console.log("finish");
+            callback(null, "finish");
+        },
+        event.timeout, cb);
 };
