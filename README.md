@@ -33,6 +33,10 @@ aws lambda invoke --function-name "${ARN}" --payload '{"timeout":1}' --query "Lo
 
  * petkaantonov/bluebird: [Bluebird unusable in AWS Lambda / NodeJS #1341][20]
  * nervous-systems/cljs-lambda: [Async functions become unreponsive if Lambda global timeout occurs #62][21]
+ 
+# Alternative examples
+
+ * Type-Zero/promise-timeout-hang: [Lambda cljs hang example][22]
     
 # Background
  * Read up on [container reuse in Lambda][10]. 
@@ -45,4 +49,5 @@ aws lambda invoke --function-name "${ARN}" --payload '{"timeout":1}' --query "Lo
 [10]: https://aws.amazon.com/blogs/compute/container-reuse-in-lambda/
 [20]: https://github.com/petkaantonov/bluebird/issues/1341
 [21]: https://github.com/nervous-systems/cljs-lambda/issues/62
+[22]: https://github.com/Type-Zero/promise-timeout-hang
 [30]: http://theburningmonk.com/2016/05/aws-lambda-constant-timeout-when-using-bluebird-promise/
